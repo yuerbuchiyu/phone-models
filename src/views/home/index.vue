@@ -1,21 +1,11 @@
 <template>
   <van-cell-group>
-    <van-cell
-      v-for="phone of state.phones"
-      :key="phone.code"
-      is-link
-      @click="showPopup"
-      >{{ phone.name }}</van-cell
-    >
+    <router-link v-for="phone of state.phones" :key="phone.code" :to="{path: 'detail', query:{models: phone.code }}">
+      <van-cell is-link>
+        {{ phone.name }}
+      </van-cell>
+    </router-link>
   </van-cell-group>
-  <van-popup
-    position="bottom"
-    round
-    :style="{ height: '90%' }"
-    v-model:show="show"
-  >
-    <div class="bar"></div>
-  </van-popup>
 </template>
 
 <script>
@@ -58,12 +48,8 @@ export default {
         },
       ],
     });
-    const show = ref(false);
-    const showPopup = () => {
-      show.value = true;
-    };
+    const showPopup = () => {};
     return {
-      show,
       showPopup,
       state,
     };
@@ -72,11 +58,4 @@ export default {
 </script>
 
 <style scoped>
-.bar {
-  height: 6px;
-  width: 50px;
-  background-color: #ccc;
-  border-radius: 16px;
-  margin: 5px auto;
-}
 </style>
