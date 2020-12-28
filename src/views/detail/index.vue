@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import { Cell, Swipe, SwipeItem } from "vant";
-import { reactive, ref } from "vue";
+import { Swipe, SwipeItem } from "vant";
+import { reactive } from "vue";
 import huawei1 from "../../assets/imgs/huawei/huawei1.png";
 import huawei2 from "../../assets/imgs/huawei/huawei2.png";
 import huawei3 from "../../assets/imgs/huawei/huawei3.png";
@@ -85,7 +85,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style>
 .van-swipe__indicator {
   width: 8px!important;
   height: 8px;
