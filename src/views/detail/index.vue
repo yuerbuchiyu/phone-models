@@ -1,6 +1,5 @@
 <template>
   <van-swipe :loop="false" class="my-swipe" indicator-color="#102E43">
-    <div class="a"></div>
     <van-swipe-item v-for="item of state[$route.query.models]" :key="item">
       <img :src="item" />
     </van-swipe-item>
@@ -45,32 +44,6 @@ export default {
   },
   setup() {
     const state = reactive({
-      phones: [
-        {
-          name: "华为",
-          code: "huawei",
-        },
-        {
-          name: "小米",
-          code: "xiaomi",
-        },
-        {
-          name: "OPPO",
-          code: "oppo",
-        },
-        {
-          name: "vivo",
-          code: "vivo",
-        },
-        {
-          name: "锤子",
-          code: "smartisan",
-        },
-        {
-          name: "魅族",
-          code: "meizu",
-        },
-      ],
       huawei: [huawei1, huawei2, huawei3, huawei4],
       xiaomi: [xiaomi1, xiaomi2, xiaomi3, xiaomi4],
       oppo: [oppo1, oppo2, oppo3, oppo4],
@@ -79,7 +52,7 @@ export default {
       smartisan: [smartisan1, smartisan2, smartisan3, smartisan4, smartisan5, smartisan6],
     });
     return {
-      state,
+      state
     };
   },
 };

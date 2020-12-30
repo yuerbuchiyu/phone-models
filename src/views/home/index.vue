@@ -9,14 +9,13 @@
 </template>
 
 <script>
-import { Cell, Popup, CellGroup } from "vant";
-import { reactive, ref } from "vue";
+import { Cell, CellGroup } from "vant";
+import { reactive } from "vue";
 
 export default {
   name: "Home",
   components: {
     VanCell: Cell,
-    VanPopup: Popup,
     VanCellGroup: CellGroup,
   },
   setup() {
@@ -48,10 +47,8 @@ export default {
         },
       ],
     });
-    const showPopup = () => {};
     return {
-      showPopup,
-      state,
+      state
     };
   },
 };
